@@ -1,4 +1,5 @@
 
+
 -- nvim tree open 
 vim.keymap.set("n", "<leader>eo", function()
 	vim.cmd("NvimTreeOpen")

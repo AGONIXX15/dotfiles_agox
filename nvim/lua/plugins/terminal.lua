@@ -15,9 +15,7 @@ return {
 		vim.cmd("ToggleTerm direction=float")
 	end)
 	-- Close the terminal
-	vim.keymap.set("n", "<leader>tc", function()
-		vim.cmd("bd!")
-	end)
+	vim.api.nvim_set_keymap("n", "<leader>tc",":bwipeout!<CR>", { noremap = true, silent = true })
 
-	end, 
+	end,
 }

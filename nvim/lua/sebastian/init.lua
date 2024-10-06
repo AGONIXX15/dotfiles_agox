@@ -4,22 +4,12 @@ require("sebastian.lazy")
 require("sebastian.opciones")
 require("sebastian.lsp")
 require("sebastian.colores")
-
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "html",
-    callback = function()
-        require("sebastian.keymaps.html")
-    end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
-    callback = function()
-        require("sebastian.keymaps.python")
-    end,
-})
-
+require("sebastian.keymaps.copilot")
+-- autocmd que edespues llama dependiendo a los de la carpeta 
+-- autocommands
+require("sebastian.autocmd")
 --snippets
 require("sebastian.snippets.html")
 require("sebastian.snippets.cpp")
+
+

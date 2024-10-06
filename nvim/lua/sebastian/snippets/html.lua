@@ -4,7 +4,7 @@ local t = ls.text_node         -- Texto para el snippet
 
 -- Define un snippet para HTML básico
 ls.add_snippets('html', {
-    s('normalhtml', {   -- El trigger del snippet
+    s('normalhtml', {
         t({
             "<!DOCTYPE html>",
             "<html lang=\"en\">",
@@ -15,7 +15,7 @@ ls.add_snippets('html', {
             "    <title>Document</title>",
             "</head>",
             "<body>",
-            "    ",  -- Espacio para que puedas escribir contenido
+            "    ",
             "</body>",
             "</html>"
         }),
