@@ -5,13 +5,14 @@ return {
     config = function()
       require("bufferline").setup {
         options = {
+					always_show_bufferline = true,
+					close_icon = "✖",
  					hover = {
             enabled = true,
             delay = 200,
             reveal = {'close'}
         	},
           numbers = "none",
-          close_icon = "",
           right_mouse_button = "close",
           left_mouse_button = "select",
           middle_mouse_button = "close",

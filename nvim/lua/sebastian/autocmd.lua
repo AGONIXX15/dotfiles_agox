@@ -14,4 +14,16 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "lua",
+    callback = function()
+        require("sebastian.keymaps.luak")
+    end,
+})
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
+    callback = function()
+        require("sebastian.keymaps.cpp")
+    end,
+})
