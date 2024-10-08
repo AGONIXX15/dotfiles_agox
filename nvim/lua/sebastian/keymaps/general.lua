@@ -16,6 +16,7 @@ vim.keymap.set("n", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Move down" })
 vim.keymap.set("n", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Move up" })
 vim.keymap.set("n", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Move right" })
 
+-- rezise windows
 vim.keymap.set("n", "<C-Up>", function()
 	vim.cmd("horizontal resize -10")
 end, { desc = "Resize up" })

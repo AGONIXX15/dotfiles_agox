@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         require("sebastian.keymaps.python")
 				require("sebastian.autocommands.python")
+				require("sebastian.snippets.python")
     end,
 })
 
