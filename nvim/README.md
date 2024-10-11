@@ -16,5 +16,5 @@ Este repositorio contiene mi configuración personal de Neovim, diseñada para m
 Para instalar mi configuración de Neovim, sigue estos pasos:
 
 ```bash
-git clone https://github.com/tuusuario/dotfiles.git ~/.config/nvim
+git clone https://github.com/AGONIXX15/dotfiles.git ~/.config/nvim
 
