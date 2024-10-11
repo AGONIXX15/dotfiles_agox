@@ -28,3 +28,10 @@ vim.api.nvim_create_autocmd("FileType", {
         require("sebastian.keymaps.cpp")
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "java",
+    callback = function()
+        require("sebastian.keymaps.java")
+    end,
+})
