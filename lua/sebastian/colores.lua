@@ -1,0 +1,7 @@
+vim.cmd("colorscheme tokyonight-moon")
+	vim.keymap.set("n","<C-t>n",function ()
+		vim.cmd("colorscheme tokyonight")
+	end)
+vim.keymap.set("n","<C-t>r",function ()
+	vim.cmd("colorscheme gruvbox")
+end)
