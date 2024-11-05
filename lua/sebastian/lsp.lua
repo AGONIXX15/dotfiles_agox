@@ -48,22 +48,6 @@ lspconfig.lua_ls.setup {
 			},
 		})
 
-require("lspconfig").pyright.setup({
-  on_attach = function(client, bufnr)
-    -- Opciones adicionales de configuración al adjuntar el LSP al buffer
-  end,
-  settings = {
-    python = {
-			pythonPath = "usr/bin/python3",
-      analysis = {
-				extraPaths = {get_root_dir(),"/home/sebastian/.local/lib/python3.10/site-packages"},
-        typeCheckingMode = "basic",  -- Cambia a "strict" para una comprobación más estricta
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-      },
-    },
-  },
-})
 
 
 --bash lsp 
@@ -88,7 +72,7 @@ require('lspconfig').bashls.setup{
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true 
 lspconfig.html.setup {
-								on_attach = function(client, bufnr) 
+								on_attach = function(client, bufnr)
 									local opts = { noremap=true, silent=true }
 										 vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 										 -- Mapeo de teclas para la definición	
@@ -138,33 +122,100 @@ lspconfig.cssls.setup{
 }
 
 -- Ruta al servidor JDTLS
-local jdtls_path = '/home/sebastian/.local/share/jdtls/jdt-language-server-1.41.0-202410021526' -- Cambia a ruta absoluta
-
+local jdtls_path = '/home/sebastian/jdtls' -- Cambia a ruta absoluta
 lspconfig.jdtls.setup {
-    cmd = { 
-        'java', -- Usa el binario de Java
+    cmd = {
+        'java',
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
         '-Dlog.protocol=true',
-        '-Dlog.level=ALL',
+        '-Dlog.level=INFO', -- Cambia ALL a INFO o ERROR si quieres menos logs
         '-Xms1g',
-        '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-jar', jdtls_path .. '/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar', -- Actualiza a la versión correcta
+        '-jar', jdtls_path .. '/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
         '-configuration', jdtls_path .. '/config_linux',
-        '-data', vim.fn.getcwd(), -- Directorio dinámico
+        '-data', vim.fn.getcwd(),
     },
 
     root_dir = function(fname)
-        return lspconfig.util.root_pattern('gradlew', 'mvnw', '.git')(fname) or vim.loop.os_homedir()
+        return lspconfig.util.root_pattern('gradlew', 'mvnw', '.git')(fname) or vim.fn.getcwd()
     end,
 
     settings = {
         java = {
-            home = '/usr/lib/jvm/java-17-openjdk-amd64',  -- Ajusta según tu instalación de Java 17
+            home = '/usr/lib/jvm/java-17-openjdk',
         },
     },
 }
+
+lspconfig.pyright.setup({
+    cmd = { "pyright-langserver", "--stdio" },
+    filetypes = { "python" },
+    settings = {
+        python = {
+            pythonPath = "/usr/bin/python3",  -- Asegúrate de que la ruta sea correcta
+						platform = "linux",
+            analysis = {
+                typeCheckingMode = "basic",  -- Cambia a "strict" para una comprobación más estricta
+                autoSearchPaths = true,
+                autoimportCompletions = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace",
+            },
+        },
+    },
+	})
+
+
+lspconfig.pylsp.setup{
+    settings = {
+        pylsp = {
+            plugins = {
+                pyflakes = { enabled = true },
+                pylint = { enabled = true },
+                autopep8 = { enabled = true },
+                yapf = { enabled = true },
+                black = { enabled = true },
+                flake8 = { enabled = true },
+                mccabe = { enabled = true },
+                pycodestyle = { enabled = true },
+                rope_autoimport = { enabled = true }
+            },
+						progress = { skip_token_initialization = true },
+        }
+    }
+	}
+
+-- Configuración de gopls para Go
+
+lspconfig.gopls.setup{
+    cmd = { "gopls" },  -- Especifica el comando para iniciar gopls
+    filetypes = { "go" },
+    root_dir = lspconfig.util.root_pattern("go.mod", ".git"),  -- Directorio raíz para el proyecto
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+                deadcode = true,
+            },
+            staticcheck = true,  -- Activa Staticcheck
+        },
+    },
+}
+
+-- Configuración de Solargraph para Ruby
+lspconfig.solargraph.setup{
+    cmd = { "solargraph", "stdio" },
+    filetypes = { "ruby" },
+    root_dir = lspconfig.util.root_pattern("Gemfile", ".git",vim.fn.getcwd()),
+    settings = {
+        solargraph = {
+            useBundler = true,
+            diagnostics = true,
+        },
+    },
+}
+
 

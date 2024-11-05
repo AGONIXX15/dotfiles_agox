@@ -9,7 +9,5 @@ require("sebastian.keymaps.copilot")
 -- autocommands
 require("sebastian.autocmd")
 --snippets
-require("sebastian.snippets.html")
-require("sebastian.snippets.cpp")
 
 

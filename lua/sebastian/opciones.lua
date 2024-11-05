@@ -5,4 +5,8 @@ vim.opt.shiftwidth = 2
 vim.bo.softtabstop = 2
 vim.opt.mousemoveevent = true
 vim.opt.list = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.cmdheight = 0
+
 

@@ -36,3 +36,20 @@ end, { desc = "Split horizontally" })
 vim.keymap.set("n", "<leader>sv", function()
 	vim.cmd("vsplit")
 end, { desc = "Split vertically" })
+
+vim.keymap.set("n", "<C-l>", function()
+    vim.cmd("TmuxNavigateRight")
+end, {desc = "Navigate right"})
+
+vim.keymap.set("n", "<C-h>", function()
+    vim.cmd("TmuxNavigateLeft")
+end, {desc = "Navigate left"})
+
+vim.keymap.set("n", "<C-j>", function()
+    vim.cmd("TmuxNavigateDown")
+end, {desc = "Navigate down"})
+
+vim.keymap.set("n", "<C-k>", function()
+    vim.cmd("TmuxNavigateUp")
+end, {desc = "Navigate up"})
+
