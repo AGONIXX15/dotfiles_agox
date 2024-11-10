@@ -27,8 +27,7 @@ Este repositorio utiliza **Lazy.nvim** para gestionar los plugins de Neovim. A c
 3. **gruvbox**: Un popular esquema de color que mejora la legibilidad.
 4. **nvim-lspconfig**: Configuración de Language Server Protocol para un desarrollo más inteligente.
 5. **nvim-cmp**: Autocompletado inteligente basado en el contexto.
-6. **mason.nvim**: Gestiona herramientas LSP y formateadores.
-7. **alpha-nvim**: Una pantalla de inicio personalizable para Neovim.
+6. **mason.nvim**: Gestiona herramientas LSP y formateadores. 7. **alpha-nvim**: Una pantalla de inicio personalizable para Neovim.
 
 Puedes agregar o quitar plugins fácilmente editando el archivo de configuración de Lazy.nvim.
 
@@ -41,6 +40,18 @@ Esta sección detalla las configuraciones personalizadas que he realizado para o
 - **Configuración de LSP**: Integración con varios lenguajes para proporcionar autocompletado y sugerencias en tiempo real.
 
 - **Ajustes de tema**: Configuración de colores y esquemas visuales para una mejor experiencia visual.
+
+- **Atajos de teclado**: Atajos personalizados para realizar tareas comunes de forma más rápida.
+
+- **Configuración de plugins**: Personalización de plugins para adaptarlos a mis necesidades específicas.
+
+- **Configuración de mapeo de teclas**: Mapeo de teclas personalizado para mejorar la eficiencia y la productividad.
+
+- **Configuración de comandos**: Definición de comandos personalizados para automatizar tareas repetitivas.
+
+- **Configuración de autocompletado**: Configuración de autocompletado para proporcionar sugerencias contextuales mientras se escribe.
+
+## Uso
 
 Ejemplo de configuración de LSP para Python:
 
