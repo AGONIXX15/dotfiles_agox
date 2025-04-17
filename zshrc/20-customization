@@ -1,0 +1,36 @@
+# -----------------------------------------------------
+# oh-my-zsh Theme (No es necesario si usas Oh My Posh)
+# -----------------------------------------------------
+ZSH_THEME="robbyrussell"  # O simplemente comenta esta línea si usas Oh My Posh
+
+# -----------------------------------------------------
+# oh-my-zsh Plugins
+# -----------------------------------------------------
+plugins=(
+    git
+    sudo
+    web-search
+    archlinux
+    zsh-autosuggestions
+    copyfile
+    copybuffer
+    dirhistory
+    fzf
+    history
+    alias-finder
+    zsh-z
+)
+
+# -----------------------------------------------------
+# Cargar Oh My Zsh
+# -----------------------------------------------------
+source $ZSH/oh-my-zsh.sh
+
+# -----------------------------------------------------
+# History Config
+# -----------------------------------------------------
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
