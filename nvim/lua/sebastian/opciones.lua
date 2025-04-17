@@ -1,0 +1,11 @@
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.bo.softtabstop = 2
+vim.opt.mousemoveevent = true
+vim.opt.list = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.cmdheight = 0
+vim.opt.expandtab = true
