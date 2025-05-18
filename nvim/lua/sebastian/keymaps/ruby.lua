@@ -1,4 +1,5 @@
 
+local M = {}
  Terminal = require("toggleterm.terminal").Terminal
  Ruby_terminal = Terminal:new({
     direction = "horizontal",
@@ -19,5 +20,12 @@ function Ruby_script()
     end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>v', ':lua Ruby_script()<CR>', { noremap = true, silent = true })
 
+function M.setup(bufnr)
+  vim.keymap.set('n', '<leader>v', function ()
+    Ruby_script()
+  end, {buffer=bufnr})
+ end
+
+
+return M

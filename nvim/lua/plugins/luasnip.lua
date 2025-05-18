@@ -4,6 +4,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",              -- Última versión
 		build = "make install_jsregexp", -- Opcional, si necesitas jsregexp
+    dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			local ls = require("luasnip")
 
@@ -23,12 +24,8 @@ return {
 	  end
 	end, {silent = true})
 
-
-		-- Cargar snippets desde friendly-snippets
-			require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load()
 		end
 	},
 
-	-- Agrega friendly-snippets
-	{ "rafamadriz/friendly-snippets" },
 }

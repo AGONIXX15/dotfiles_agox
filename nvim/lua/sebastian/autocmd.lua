@@ -11,16 +11,19 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "python",
     callback = function()
-      require("sebastian.keymaps.python")
-			require("sebastian.autocommands.python")
-			require("sebastian.snippets.python")
+      local bufnr = vim.api.nvim_get_current_buf()
+      require("sebastian.keymaps.python").setup(bufnr)
+			require("sebastian.autocommands.python").setup(bufnr)
+			require("sebastian.snippets.python").setup(bufnr)
 			vim.opt.list = false
     end,
 })
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "lua",
     callback = function()
-      require("sebastian.keymaps.luak")
+      local bufnr = vim.api.nvim_get_current_buf()
+      require("sebastian.keymaps.luak").setup(bufnr)
 			vim.opt.list = true
     end,
 })
@@ -28,9 +31,9 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
     callback = function()
-      require("sebastian.keymaps.cpp")
-			require("sebastian.snippets.cpp")
-      
+      local bufnr = vim.api.nvim_get_current_buf()
+      require("sebastian.keymaps.cpp").setup(bufnr)
+			require("sebastian.snippets.cpp").setup(bufnr)
 			vim.opt.list = false
     end,
 })
@@ -38,15 +41,17 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"js","javascript","typescript"},
     callback = function()
-      require("sebastian.keymaps.javascript")
+      local bufnr = vim.api.nvim_get_current_buf()
+      require("sebastian.keymaps.javascript").setup(bufnr)
 			vim.opt.list = false
     end,
 })
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "java",
     callback = function()
-      require("sebastian.keymaps.java")
-			require("sebastian.snippets.java")
+      local bufnr = vim.api.nvim_get_current_buf()
+      require("sebastian.keymaps.java").setup(bufnr)
+			require("sebastian.snippets.java").setup(bufnr)
 			vim.opt.list = false
     end,
 })
@@ -54,7 +59,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 		pattern = {"zsh","sh"},
 		callback = function()
-			require("sebastian.keymaps.bash")
+      local bufnr = vim.api.nvim_get_current_buf()
+			require("sebastian.keymaps.bash").setup(bufnr)
 			vim.opt.list = false
 		end,
 })
@@ -63,7 +69,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 		pattern = "ruby",
 		callback = function()
-			require("sebastian.keymaps.ruby")
+      local bufnr = vim.api.nvim_get_current_buf()
+			require("sebastian.keymaps.ruby").setup(bufnr)
 		vim.opt.list = false
 		end,
 })
@@ -71,8 +78,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 		pattern = "go",
 		callback = function()
-			require("sebastian.keymaps.go")
-			require("sebastian.snippets.go")
+			require("sebastian.keymaps.go").setup(bufnr)
+			require("sebastian.snippets.go").setup(bufnr)
 		vim.opt.list = false
 		end,
 })

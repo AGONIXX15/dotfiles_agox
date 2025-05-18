@@ -10,14 +10,14 @@ return {
         changedelete = { text = '~' },   -- Signo para líneas cambiadas y borradas
     },
     on_attach = function(bufnr)
-				vim.keymap.set('n', '<leader>gn', '<cmd>Gitsigns next_hunk<CR>', { buffer = bufnr, desc = 'Next Hunk' })
-        vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns prev_hunk<CR>', { buffer = bufnr, desc = 'Previous Hunk' })
-        vim.keymap.set('n', '<leader>gd', '<cmd>Gitsigns preview_hunk<CR>', { buffer = bufnr, desc = 'Preview Hunk' })
-        vim.keymap.set('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', { buffer = bufnr, desc = 'Reset Hunk' })
-        vim.keymap.set('n', '<leader>gR', '<cmd>Gitsigns reset_buffer<CR>', { buffer = bufnr, desc = 'Reset Buffer' })
-        vim.keymap.set('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', { buffer = bufnr, desc = 'Stage Hunk' })
-        vim.keymap.set('n', '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', { buffer = bufnr, desc = 'Undo Stage Hunk' })
-        vim.keymap.set('n', '<leader>gt', '<cmd>ToggleTerm cmd="git"<CR>', { buffer = bufnr, desc = 'Git Terminal' })
+				vim.keymap.set('n', '<leader>hn', '<cmd>Gitsigns next_hunk<CR>', { buffer = bufnr, desc = 'Next Hunk' })
+        vim.keymap.set('n', '<leader>hp', '<cmd>Gitsigns prev_hunk<CR>', { buffer = bufnr, desc = 'Previous Hunk' })
+        vim.keymap.set('n', '<leader>hd', '<cmd>Gitsigns preview_hunk<CR>', { buffer = bufnr, desc = 'Preview Hunk' })
+        vim.keymap.set('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>', { buffer = bufnr, desc = 'Reset Hunk' })
+        vim.keymap.set('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>', { buffer = bufnr, desc = 'Reset Buffer' })
+        vim.keymap.set('n', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', { buffer = bufnr, desc = 'Stage Hunk' })
+        vim.keymap.set('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>', { buffer = bufnr, desc = 'Undo Stage Hunk' })
+        vim.keymap.set('n', '<leader>ht', '<cmd>ToggleTerm cmd="git"<CR>', { buffer = bufnr, desc = 'Git Terminal' })
     end,
 }
 

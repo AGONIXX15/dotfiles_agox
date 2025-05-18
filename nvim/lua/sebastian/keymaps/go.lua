@@ -1,3 +1,4 @@
+local M = {}
  Terminal = require("toggleterm.terminal").Terminal
  Go_terminal = Terminal:new({
     direction = "horizontal",
@@ -18,5 +19,10 @@ function Go_script()
     end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>v', ':lua Go_script()<CR>', { noremap = true, silent = true })
+function M.setup(bufnr)
+  vim.keymap.set('n', '<leader>v', function ()
+    Go_script()
+  end, {buffer=bufnr})
+end
 
+return M

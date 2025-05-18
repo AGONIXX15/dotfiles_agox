@@ -1,6 +1,6 @@
 --nvim tree open
 vim.keymap.set("n", "<leader>e", function()
-  vim.cmd("NvimTreeToggle")
+  vim.cmd("Neotree")
 end, { desc = "Toggle Explorer Focus" })
 
 -- keymaps to move in nvimtree

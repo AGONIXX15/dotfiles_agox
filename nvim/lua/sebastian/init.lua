@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+require("sebastian.keymaps.neotree")
 require("sebastian.keymaps.general")
 require("sebastian.lazy")
 require("sebastian.opciones")
@@ -8,5 +9,3 @@ require("sebastian.keymaps.copilot")
 -- autocommands
 require("sebastian.autocmd")
 --snippets
-
-

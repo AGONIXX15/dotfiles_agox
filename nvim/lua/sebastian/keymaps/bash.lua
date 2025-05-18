@@ -19,5 +19,6 @@ function Bash_script()
     end
 end
 
+
 vim.api.nvim_set_keymap('n', '<leader>v', ':lua Bash_script()<CR>', { noremap = true, silent = true })
 
