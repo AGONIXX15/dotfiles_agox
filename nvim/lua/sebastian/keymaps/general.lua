@@ -1,7 +1,14 @@
 --nvim tree open
-vim.keymap.set("n", "<leader>e", function()
-  vim.cmd("Neotree")
+vim.keymap.set("n", "<leader>el", function()
+  vim.cmd("Neotree left")
 end, { desc = "Toggle Explorer Focus" })
+
+vim.keymap.set("n", "<leader>eb", function ()
+  vim.cmd("Neotree buffers")
+end, { desc = "Toogle to buffers"})
+vim.keymap.set("n", "<leader>ef", function ()
+  vim.cmd("Neotree float")
+end, { desc = "Toggle to float explorer"})
 
 -- keymaps to move in nvimtree
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])

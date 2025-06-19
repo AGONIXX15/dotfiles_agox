@@ -13,8 +13,8 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
       local bufnr = vim.api.nvim_get_current_buf()
       require("sebastian.keymaps.python").setup(bufnr)
-			require("sebastian.autocommands.python").setup(bufnr)
-			require("sebastian.snippets.python").setup(bufnr)
+			require("sebastian.autocommands.python")
+			require("sebastian.snippets.python")
 			vim.opt.list = false
     end,
 })
@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
       local bufnr = vim.api.nvim_get_current_buf()
       require("sebastian.keymaps.cpp").setup(bufnr)
-			require("sebastian.snippets.cpp").setup(bufnr)
+			require("sebastian.snippets.cpp")
 			vim.opt.list = false
     end,
 })

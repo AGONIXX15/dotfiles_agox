@@ -1,3 +1,4 @@
+local M = {}
 Terminal = require("toggleterm.terminal").Terminal
 Cpp_terminal = Terminal:new({
   direction = "horizontal",
@@ -25,3 +26,12 @@ function Cpp_script()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>v', ':lua Cpp_script()<CR>', { noremap = true, silent = true })
+
+function M.setup(bufnr)
+  vim.keymap.set('n', '<leader>v', function ()
+    Cpp_script()
+  end, {buffer=bufnr})
+end
+
+return M
+

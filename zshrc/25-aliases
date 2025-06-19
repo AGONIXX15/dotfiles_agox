@@ -17,7 +17,7 @@ alias v='$EDITOR'
 alias ts='~/.config/ml4w/scripts/snapshot.sh'
 alias wifi='nmtui'
 alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
-alias pbcopy='xclip -selection clipboard'
+alias pbcopy='wl-copy'
 alias wallrandom="~/.local/share/bin/wallrandom.sh"
 
 # -----------------------------------------------------

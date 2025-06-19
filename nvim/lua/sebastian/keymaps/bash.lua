@@ -1,3 +1,4 @@
+local M = {}
 
  Terminal = require("toggleterm.terminal").Terminal
  Bash_terminal = Terminal:new({
@@ -19,6 +20,10 @@ function Bash_script()
     end
 end
 
+function M.setup(bufnr)
+  vim.keymap.set('n', '<leader>v', function ()
+    Bash_script()
+  end, {buffer=bufnr})
+end
 
-vim.api.nvim_set_keymap('n', '<leader>v', ':lua Bash_script()<CR>', { noremap = true, silent = true })
-
+return M
